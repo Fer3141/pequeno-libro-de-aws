@@ -31,7 +31,7 @@ Amazon Web Services es la plataforma de servicios en la nube de Amazon: cómputo
 
 ### Instalar la AWS CLI
 
-La AWS CLI (versión 2, la actual) se descarga desde la página oficial: https://aws.amazon.com/cli/ — ahí mismo están los instaladores para cada sistema operativo. También se puede instalar así:
+La AWS CLI (versión 2, la actual) se descarga desde la página oficial (https://aws.amazon.com/cli/), donde están los instaladores para cada sistema operativo. También se puede instalar así:
 
 **Windows**: descargar y ejecutar el instalador `.msi` de 64 bits: https://awscli.amazonaws.com/AWSCLIV2.msi
 
@@ -60,7 +60,7 @@ Comprueba que la instalación funcionó y muestra la versión instalada (deberí
 1. Entrar a la consola de AWS → **IAM** → **Users** → seleccionar (o crear) el usuario.
 2. Pestaña **Security credentials** → **Create access key**.
 3. Elegir el caso de uso *Command Line Interface (CLI)* y confirmar.
-4. Copiar el `Access Key ID` y el `Secret Access Key` que se muestran — el secret **solo se ve una vez**, hay que guardarlo en ese momento (o descargar el `.csv`).
+4. Copiar el `Access Key ID` y el `Secret Access Key` que se muestran: el secret **solo se ve una vez**, así que hay que guardarlo en ese momento (o descargar el `.csv`).
 
 > No uses las credenciales del usuario **root** para esto. Crea un usuario IAM (ver sección [IAM](#iam-gestión-de-identidades-y-accesos)) con los permisos que necesites y genera el access key sobre ese usuario.
 
@@ -132,7 +132,7 @@ aws iam create-role --role-name <nombre> --assume-role-policy-document file://tr
 ```
 Crea un rol a partir de una *trust policy* (define quién puede asumir el rol: un servicio, otra cuenta, etc.).
 
-**Buena práctica clave**: aplicar el **principio de mínimo privilegio** — dar solo los permisos estrictamente necesarios — y preferir roles temporales sobre credenciales de usuario de larga duración siempre que sea posible.
+**Buena práctica clave**: aplicar el **principio de mínimo privilegio** (dar solo los permisos estrictamente necesarios) y preferir roles temporales sobre credenciales de usuario de larga duración siempre que sea posible.
 
 ---
 
@@ -377,7 +377,7 @@ AWS ofrece certificaciones oficiales organizadas en cuatro niveles. Todos los ex
 ### Cómo prepararse
 
 1. Elegir la certificación según el rol/objetivo (por ejemplo, Cloud Practitioner como punto de entrada si no se tiene experiencia previa en la nube).
-2. Revisar la **guía de examen** (*exam guide*) oficial de la certificación elegida — enlazada en cada una de las páginas de arriba — para ver los dominios y su ponderación.
+2. Revisar la **guía de examen** (*exam guide*) oficial de la certificación elegida, enlazada en cada una de las páginas de arriba, para ver los dominios y su ponderación.
 3. Usar **AWS Skill Builder** (https://skillbuilder.aws/) para los cursos de preparación gratuitos, sets de preguntas de práctica oficiales y, opcionalmente, los exámenes de práctica de pago.
 4. Practicar en una cuenta real dentro del **Free Tier** (https://aws.amazon.com/free/) para afianzar los conceptos con la consola y la CLI.
 5. Registrarse y agendar el examen desde https://aws.amazon.com/certification/certification-prep/register/.
