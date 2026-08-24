@@ -29,6 +29,41 @@ Amazon Web Services es la plataforma de servicios en la nube de Amazon: cómputo
 
 ## Configuración inicial
 
+### Instalar la AWS CLI
+
+La AWS CLI (versión 2, la actual) se descarga desde la página oficial: https://aws.amazon.com/cli/ — ahí mismo están los instaladores para cada sistema operativo. También se puede instalar así:
+
+**Windows**: descargar y ejecutar el instalador `.msi` de 64 bits: https://awscli.amazonaws.com/AWSCLIV2.msi
+
+**macOS**:
+```bash
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+```
+
+**Linux**:
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+
+```bash
+aws --version
+```
+Comprueba que la instalación funcionó y muestra la versión instalada (debería ser `aws-cli/2.x`).
+
+### Crear las credenciales
+
+`aws configure` pide un `Access Key ID` y un `Secret Access Key`. Estos se generan así:
+
+1. Entrar a la consola de AWS → **IAM** → **Users** → seleccionar (o crear) el usuario.
+2. Pestaña **Security credentials** → **Create access key**.
+3. Elegir el caso de uso *Command Line Interface (CLI)* y confirmar.
+4. Copiar el `Access Key ID` y el `Secret Access Key` que se muestran — el secret **solo se ve una vez**, hay que guardarlo en ese momento (o descargar el `.csv`).
+
+> No uses las credenciales del usuario **root** para esto. Crea un usuario IAM (ver sección [IAM](#iam-gestión-de-identidades-y-accesos)) con los permisos que necesites y genera el access key sobre ese usuario.
+
 ```bash
 aws configure
 ```
